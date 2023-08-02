@@ -9,8 +9,8 @@ return {
 	defaults = {
 		theme1 = "ayu_dark",
 		theme2 = "ayu_light",
-		theme1_icon = " ",
-		theme2_icon = " ",
+		theme1_icon = "",
+		theme2_icon = "",
 
 		-- ~/.config/nvim/lua/custom/
 		custom_themes_path = vim.fn.stdpath("config") .. "/lua/custom",
