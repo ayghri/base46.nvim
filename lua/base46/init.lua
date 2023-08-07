@@ -8,18 +8,10 @@
 local config = require("base46.config")
 local M = {}
 
-M.merge_tb = function(...)
-	return vim.tbl_deep_extend("force", ...)
-end
+M.merge_tb = function(...) return vim.tbl_deep_extend("force", ...) end
 
 M.join_paths = function(paths_tb)
-	-- P(paths_tb)
-	local result = paths_tb[1]
-	table.remove(paths_tb, 1)
-	for _, name in ipairs(paths_tb) do
-		result = result .. "/" .. name
-	end
-	return result:gsub("/+", "/")
+	return vim.fs.normalize(table.concat(paths_tb, "/"))
 end
 
 M.path_to_cache = function(...)
@@ -258,12 +250,8 @@ function M.setup(opts)
 		Base46.config.transparency = Base46.opts.transparency
 		changed = true
 	end
-	if changed then
-		require("base46.utils").save_config()
-	end
-	if to_compile then
-		M.compile()
-	end
+	if changed then require("base46.utils").save_config() end
+	if to_compile then M.compile() end
 	vim.g.base46_is_setup = true
 end
 return M

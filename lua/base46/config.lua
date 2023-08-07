@@ -1,9 +1,7 @@
-if not Base46 then
-	Base46 = {
-		config = {},
-		opts = {},
-	}
-end
+if not Base46 then Base46 = {
+	config = {},
+	opts = {},
+} end
 
 return {
 	defaults = {

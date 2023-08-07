@@ -1,5 +1,6 @@
 local colors = require("base46").get_theme_tb("base_30")
-local generate_color = require("base46.colors").change_hex_lightness
+local lighten = require("base46.colors").change_hex_lightness
+-- local lighten = require("base46.colors").change_hex_lightness
 local merge_tb = require("base46").merge_tb
 
 -- change color values according to statusilne themes
@@ -11,8 +12,8 @@ local merge_tb = require("base46").merge_tb
 -- colors.light_grey = generate_color(colors.light_grey, 20)
 -- elseif statusline_theme == "vscode_colored" then
 
-colors.statusline_bg = generate_color(colors.statusline_bg, 1)
-colors.light_grey = generate_color(colors.light_grey, 15)
+colors.statusline_bg = lighten(colors.statusline_bg, 1)
+colors.light_grey = lighten(colors.light_grey, 15)
 -- end
 local statusline_theme = "default"
 -- local statusline_theme = "vscode_colored"
@@ -77,8 +78,8 @@ M.default = {
 	},
 
 	StLineFileInfo = {
-		bg = colors.lightbg,
-		fg = colors.white,
+		bg = colors.one_bg,
+		fg = lighten(colors.white, -20),
 	},
 
 	StLineFileSep = {
@@ -264,20 +265,20 @@ M.vscode_colored = {
 -- }
 
 -- local hlgroups_minimal_glassy = {
-	-- "StLineLSPError",
-	-- "StLineLSPWarning",
-	-- "StLineLSPHints",
-	-- "StLineGitIcons",
-	-- "StLineLSPInfo",
-	-- "StLineEmptySpace",
-	-- "StLineLSPProgress",
-	-- "StLineSepR",
+-- "StLineLSPError",
+-- "StLineLSPWarning",
+-- "StLineLSPHints",
+-- "StLineGitIcons",
+-- "StLineLSPInfo",
+-- "StLineEmptySpace",
+-- "StLineLSPProgress",
+-- "StLineSepR",
 -- }
 
 -- if Base46.opts.transparency then
-	-- for _, value in ipairs(hlgroups_minimal_glassy) do
-		-- M.minimal[value].bg = "NONE"
-	-- end
+-- for _, value in ipairs(hlgroups_minimal_glassy) do
+-- M.minimal[value].bg = "NONE"
+-- end
 -- end
 
 -- add common lsp highlights
@@ -295,18 +296,18 @@ local function genModes_hl(modename, col)
 		{ fg = colors[col], bg = colors.one_bg3, bold = true }
 
 	-- M.minimal["StLine" .. modename .. "Mode"] =
-		-- { fg = colors.black, bg = colors[col], bold = true }
+	-- { fg = colors.black, bg = colors[col], bold = true }
 	-- M.minimal["StLine" .. modename .. "ModeSep"] =
-		-- { fg = colors[col], bg = colors.black, bold = true }
+	-- { fg = colors[col], bg = colors.black, bold = true }
 	-- M.minimal["StLine" .. modename .. "ModeText"] =
-		-- { fg = colors[col], bg = colors.one_bg, bold = true }
+	-- { fg = colors[col], bg = colors.one_bg, bold = true }
 end
 
 -- add mode highlights
 -- if statusline_theme == "default" then
-	genModes_hl("Normal", "nord_blue")
+genModes_hl("Normal", "nord_blue")
 -- else
-	-- genModes_hl("Normal", "blue")
+-- genModes_hl("Normal", "blue")
 -- end
 
 genModes_hl("Visual", "cyan")

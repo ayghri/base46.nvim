@@ -7,9 +7,7 @@ local M = {}
 -- @return b: Blue (0-255)
 M.hex2rgb = function(hex)
 	local hash = string.sub(hex, 1, 1) == "#"
-	if string.len(hex) ~= (7 - (hash and 0 or 1)) then
-		return nil
-	end
+	if string.len(hex) ~= (7 - (hash and 0 or 1)) then return nil end
 
 	local r = tonumber(hex:sub(2 - (hash and 0 or 1), 3 - (hash and 0 or 1)), 16)
 	local g = tonumber(hex:sub(4 - (hash and 0 or 1), 5 - (hash and 0 or 1)), 16)
@@ -34,12 +32,8 @@ end
 -- Helper function to convert a HSL color value to RGB
 -- Not to be used directly, use M.hsl2rgb instead
 M.hsl2rgb_helper = function(p, q, a)
-	if a < 0 then
-		a = a + 6
-	end
-	if a >= 6 then
-		a = a - 6
-	end
+	if a < 0 then a = a + 6 end
+	if a >= 6 then a = a - 6 end
 	if a < 1 then
 		return (q - p) * a + p
 	elseif a < 3 then
@@ -99,15 +93,11 @@ M.rgb2hsl = function(r, g, b)
 		h = 4 + (r - g) / (max - min)
 	end
 
-	if not rawequal(type(h), "number") then
-		h = 0
-	end
+	if not rawequal(type(h), "number") then h = 0 end
 
 	h = h * 60
 
-	if h < 0 then
-		h = h + 360
-	end
+	if h < 0 then h = h + 360 end
 
 	l = (min + max) / 2
 
@@ -152,12 +142,8 @@ end
 M.change_hex_hue = function(hex, percent)
 	local h, s, l = M.hex2hsl(hex)
 	h = h + (percent / 100)
-	if h > 360 then
-		h = 360
-	end
-	if h < 0 then
-		h = 0
-	end
+	if h > 360 then h = 360 end
+	if h < 0 then h = 0 end
 	return M.hsl2hex(h, s, l)
 end
 
@@ -169,12 +155,8 @@ end
 M.change_hex_saturation = function(hex, percent)
 	local h, s, l = M.hex2hsl(hex)
 	s = s + (percent / 100)
-	if s > 1 then
-		s = 1
-	end
-	if s < 0 then
-		s = 0
-	end
+	if s > 1 then s = 1 end
+	if s < 0 then s = 0 end
 	return M.hsl2hex(h, s, l)
 end
 
@@ -186,12 +168,8 @@ end
 M.change_hex_lightness = function(hex, percent)
 	local h, s, l = M.hex2hsl(hex)
 	l = l + (percent / 100)
-	if l > 1 then
-		l = 1
-	end
-	if l < 0 then
-		l = 0
-	end
+	if l > 1 then l = 1 end
+	if l < 0 then l = 0 end
 	return M.hsl2hex(h, s, l)
 end
 
