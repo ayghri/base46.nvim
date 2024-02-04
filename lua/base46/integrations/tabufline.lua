@@ -4,26 +4,19 @@ local lighten = require("base46.colors").change_hex_lightness
 local M = {
 
 	TbfLineFill = {
-		bg = colors.black,
+		-- bg = colors.black,
 		-- bg = colors.black2,
 	},
 
 	TbfLineBufOn = {
 		fg = colors.white,
 		sp = colors.blue,
-		-- bg = colors.black,
 		bg = colors.grey_fg2,
-		-- bg = colors.grey,
-		-- underline = true,
-		underdouble = true,
-		-- undercurl = true,
-		-- bg = colors.red,
 	},
 
 	TbfLineBufOff = {
 		fg = colors.light_grey,
 		bg = colors.black,
-		-- bg = colors.black2,
 	},
 
 	TbfLineBufOnClose = {
@@ -79,7 +72,6 @@ local M = {
 M = vim.tbl_deep_extend("force", M, {
 	TbfLineBufOnEdge = {
 		fg = M.TbfLineBufOn.bg,
-		bg = M.TbfLineBufOff.bg,
 	},
 	TbfLineBufOnModified = vim.tbl_deep_extend("force", M.TbfLineBufOn, {
 		fg = colors.red,
