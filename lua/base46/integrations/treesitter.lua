@@ -1,224 +1,272 @@
+local colors = require("base46").get_theme_tb("base_30")
 local theme = require("base46").get_theme_tb("base_16")
 
 return {
-	-- `@annotation` is not one of the default capture group, should we keep it
-	["@annotation"] = {
-		fg = theme.base0F,
-	},
+  -- `@annotation` is not one of the default capture group, should we keep it
+  ["@annotation"] = {
+    fg = theme.base0F,
+  },
 
-	["@attribute"] = {
-		fg = theme.base0A,
-	},
+  ["@attribute"] = {
+    fg = theme.base0A,
+  },
 
-	["@character"] = {
-		fg = theme.base08,
-	},
-	-- braces {},
-	["@constructor"] = {},
+  ["@identifier"] = {
+    fg = colors.purple,
+  },
+  ["@character"] = {
+    fg = theme.base08,
+  },
+  -- braces {},
+  ["@constructor"] = {
+    fg = theme.base08,
+  },
 
-	["@constant"] = {
-		fg = theme.base08,
-	},
+  ["@constant"] = {
+    fg = theme.base08,
+  },
 
-	["@constant.builtin"] = {
-		fg = theme.base09,
-	},
+  ["@constant.builtin"] = {
+    fg = theme.base09,
+  },
 
-	["@constant.macro"] = {
-		fg = theme.base08,
-	},
+  ["@constant.macro"] = {
+    fg = theme.base08,
+  },
 
-	["@error"] = {
-		fg = theme.base08,
-	},
+  ["@error"] = {
+    fg = theme.base08,
+  },
 
-	["@exception"] = {
-		fg = theme.base08,
-	},
+  ["@exception"] = {
+    fg = theme.base08,
+  },
 
-	["@float"] = {
-		fg = theme.base09,
-	},
+  ["@float"] = {
+    fg = theme.base09,
+  },
 
-	["@keyword"] = {
-		-- fg = theme.base0E,
-		fg = theme.base0D,
-	},
+  ["@keyword"] = {
+    -- fg = theme.base0E,
+    fg = theme.base0D,
+  },
 
-	["@keyword.function"] = {
-		fg = theme.base0E,
-	},
+  ["@keyword.function"] = {
+    fg = theme.base0E,
+  },
 
-	["@keyword.return"] = {
-		fg = theme.base0E,
-	},
+  ["@keyword.return"] = {
+    fg = theme.base0E,
+  },
 
-	["@function"] = {
-		fg = theme.base0D,
-	},
+  ["@function"] = {
+    fg = theme.base0D,
+  },
 
-	["@function.builtin"] = {
-		fg = theme.base0D,
-	},
+  ["@function.builtin"] = {
+    fg = theme.base0D,
+  },
 
-	["@function.macro"] = {
-		fg = theme.base08,
-	},
+  ["@function.macro"] = {
+    fg = theme.base0A,
+  },
 
-	["@function.call"] = {
-		-- fg = theme.base0D,
-		fg = theme.base0A,
-	},
+  ["@function.call"] = {
+    -- fg = theme.base0D,
+    fg = theme.base0A,
+  },
 
-	["@operator"] = {
-		fg = theme.base05,
-	},
+  ["@markup.environment"] = {
+    fg = colors.red,
+  },
+  ["@markup.environment.name"] = {
+    fg = colors.green,
+  },
 
-	["@keyword.operator"] = {
-		fg = theme.base0E,
-	},
+  ["@markup.heading"] = {
+    fg = theme.base0E,
+  },
 
-	["@method"] = {
-		-- fg = theme.base0D,
-		fg = theme.base0A,
-	},
+  ["@markup.heading.1"] = {
+    fg = colors.red,
+  },
 
-	["@method.call"] = {
-		-- fg = theme.base0D,
-		fg = theme.base0A,
-	},
+  ["@markup.heading.3"] = {
+    fg = colors.pink,
+  },
 
-	["@namespace"] = {
-		fg = theme.base08,
-	},
+  ["@markup.heading.4"] = {
+    fg = theme.base0F,
+  },
+  ["@formula"] = {
+    fg = colors.vibrant_green,
+  },
 
-	["@none"] = {
-		fg = theme.base07,
-	},
+  ["@module"] = {
+    fg = colors.nord_blue,
+  },
 
-	["@parameter"] = {
-		fg = theme.base08,
-	},
+  ["@markup.link.label"] = {
+    fg = theme.base0C,
+  },
+  ["@markup.link.url"] = {
+    fg = theme.base09,
+  },
 
-	["@reference"] = {
-		fg = theme.base05,
-	},
+  ["@markup.list"] = {
+    fg = colors.red,
+    bold = true,
+  },
 
-	["@punctuation.bracket"] = {
-		fg = theme.base0F,
-	},
+  ["@operator"] = {
+    fg = theme.base05,
+  },
 
-	["@punctuation.delimiter"] = {
-		fg = theme.base0F,
-	},
+  ["@keyword.operator"] = {
+    fg = theme.base0E,
+  },
 
-	["@punctuation.special"] = {
-		fg = theme.base08,
-	},
+  ["@method"] = {
+    -- fg = theme.base0D,
+    fg = theme.base0A,
+  },
 
-	["@string"] = {
-		fg = theme.base0B,
-	},
-	-- ?
-	["@string.regex"] = {
-		fg = theme.base0C,
-	},
+  ["@method.call"] = {
+    -- fg = theme.base0D,
+    fg = theme.base0A,
+  },
 
-	["@string.escape"] = {
-		fg = theme.base0C,
-	},
+  ["@namespace"] = {
+    fg = theme.base08,
+  },
 
-	["@string.special"] = {
-		fg = theme.base0C,
-	},
+  ["@none"] = {
+    fg = theme.base07,
+  },
 
-	["@symbol"] = {
-		fg = theme.base0B,
-	},
+  ["@parameter"] = {
+    fg = theme.base08,
+  },
 
-	["@tag"] = {
-		link = "Tag",
-	},
+  ["@reference"] = {
+    fg = theme.base05,
+  },
 
-	["@tag.attribute"] = {
-		link = "@property",
-	},
+  ["@punctuation.bracket"] = {
+    fg = theme.base0F,
+  },
 
-	["@tag.delimiter"] = {
-		fg = theme.base0F,
-	},
+  ["@punctuation.delimiter"] = {
+    fg = theme.base0F,
+  },
 
-	["@text"] = {
-		fg = theme.base08,
-	},
+  ["@punctuation.special"] = {
+    fg = theme.base0A,
+  },
 
-	["@text.strong"] = {
-		bold = true,
-	},
+  ["@string"] = {
+    fg = theme.base0B,
+  },
+  -- ?
+  ["@string.regex"] = {
+    fg = theme.base0C,
+  },
 
-	["@text.emphasis"] = {
-		fg = theme.base09,
-	},
+  ["@string.escape"] = {
+    fg = theme.base0C,
+  },
 
-	["@text.strike"] = {
-		fg = theme.base0F,
-		strikethrough = true,
-	},
+  ["@string.special"] = {
+    fg = theme.base0C,
+  },
 
-	["@text.literal"] = {
-		fg = theme.base09,
-	},
+  ["@symbol"] = {
+    fg = theme.base0B,
+  },
 
-	["@text.uri"] = {
-		fg = theme.base09,
-		underline = true,
-	},
+  ["@tag"] = {
+    link = "Tag",
+  },
 
-	["@type.builtin"] = {
-		fg = theme.base0A,
-	},
+  ["@tag.attribute"] = {
+    link = "@property",
+  },
 
-	["@variable"] = {
-		fg = theme.base05,
-	},
+  ["@tag.delimiter"] = {
+    fg = theme.base0F,
+  },
 
-	["@variable.builtin"] = {
-		fg = theme.base09,
-	},
+  ["@text"] = {
+    fg = theme.base08,
+  },
 
-	-- variable.global
+  ["@text.strong"] = {
+    bold = true,
+  },
 
-	["@definition"] = {
-		sp = theme.base04,
-		underline = true,
-	},
+  ["@text.emphasis"] = {
+    fg = theme.base09,
+  },
 
-	-- TSDefinitionUsage = {
-	--   sp = theme.base04,
-	--   underline = true,
-	-- },
+  ["@text.strike"] = {
+    fg = theme.base0F,
+    strikethrough = true,
+  },
 
-	["@scope"] = {
-		bold = true,
-	},
+  ["@text.literal"] = {
+    fg = theme.base09,
+  },
 
-	["@field"] = {
-		fg = theme.base08,
-	},
+  ["@text.uri"] = {
+    fg = theme.base09,
+    underline = true,
+  },
 
-	["@field.key"] = {
-		fg = theme.base08,
-	},
+  ["@type.builtin"] = {
+    fg = theme.base0A,
+  },
 
-	["@property"] = {
-		fg = theme.base08,
-	},
+  ["@variable"] = {
+    fg = theme.base05,
+  },
 
-	["@include"] = {
-		link = "Include",
-	},
+  ["@variable.builtin"] = {
+    fg = theme.base09,
+  },
 
-	["@conditional"] = {
-		link = "Conditional",
-	},
+  -- variable.global
+
+  ["@definition"] = {
+    sp = theme.base04,
+    underline = true,
+  },
+
+  -- TSDefinitionUsage = {
+  --   sp = theme.base04,
+  --   underline = true,
+  -- },
+
+  ["@scope"] = {
+    bold = true,
+  },
+
+  ["@field"] = {
+    fg = theme.base08,
+  },
+
+  ["@field.key"] = {
+    fg = theme.base08,
+  },
+
+  ["@property"] = {
+    fg = theme.base08,
+  },
+
+  ["@include"] = {
+    link = "Include",
+  },
+
+  ["@conditional"] = {
+    link = "Conditional",
+  },
 }

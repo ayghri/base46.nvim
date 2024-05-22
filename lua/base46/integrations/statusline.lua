@@ -103,7 +103,7 @@ M.default = {
 	},
 
 	StLinePosSep = {
-		fg = colors.green,
+		fg = lighten(colors.white, -20),
 		bg = colors.lightbg,
 	},
 

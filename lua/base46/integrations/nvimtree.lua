@@ -11,7 +11,7 @@ return {
 	NvimTreeNormalNC = { bg = colors.darker_black },
 	NvimTreeOpenedFolderName = { fg = colors.folder_bg },
 	NvimTreeGitIgnored = { fg = colors.light_grey },
-
+  NvimTreeExecFile = {fg = colors.green},
 	NvimTreeWinSeparator = {
 		fg = colors.darker_black,
 		bg = colors.darker_black,
